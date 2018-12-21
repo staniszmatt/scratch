@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCOPE</title>
+        <script type="text/javascript" src="../jquery.js"></script>
+        <script type="text/javascript">
+        
+        var num = 5;
+        console.log('a) '+num);
+    function fun1(num){
+        console.log('b) '+num);
+            return fun2(num*-1);
+        console.log('c) '+num);
+        }
+    function fun2(num){
+        console.log('d) '+num);
+        num = num*2;
+            return fun3(num) * 3;
+        console.log('e) '+num);
+
+            function fun3(num){
+                console.log('f) '+num);
+                    return num+2;
+                console.log('g) '+num);
+                }
+            console.log('h) '+num);
+        }
+        console.log('i) '+num);
+    num = fun1(num);
+        console.log('j) '+num);
+
+
+        //scope is where you are and access to in your code.
+        //lexical scope - the chain of scope extending from immediat area all the way out to the most global scope. 
+        // local scope, parental scope,
+
+      /*  how to figure out what value something is? 
+        1)What scope am I in?
+        2)Is there a local defined var within that scope?
+            Locally defined: 
+                var declared
+                parameter of a function 
+        3) if not found, go to the parental (lexical) scope from your current scope?
+            Parental scope is not defined by where the function was run,
+            it is defined by where the function was defined
+        4) go to 2)
+
+        c = 4; is an auto global variable 
+        */
+        function something (){
+            var a = 4;
+        }
+        var b = 12; 
+
+        something();
+
+        function something(){
+            var a = 4;
+            console.log('3) '+b)
+        }
+        console.log('1) '+b)
+        var b = 12;
+        console.log('2) '+b)
+        something();
+        console.log('4) '+b)
+
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

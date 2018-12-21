@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery</title>
+        <script src="../jquery.js" type="text/javascript">
+        //jquery is a helper library that aids in dom manipulation/editing and some actions
+        //$() jquery selector
+        //jQuery() is the same thing as the jquery selector
+        //chooses or makes one or more dom elements to do something with
+        //$('something to select a dom element')  //which means any css selector, core js dom element (node element) and jQuery dom element 
+         /* jquery select the document 
+        add a ready handler
+        pass in a particular function*/
+
+        //inhertience < * < tagname < .class < #id < inline <!important < inline < inline !important
+        </script>
+        <style type="text/css">
+       
+        </style>
+        <script type="text/javascript">
+         $(document).ready(runWhenDOMisLoaded);
+
+        function runWhenDOMisLoaded() { 
+            functionToRun();
+            addDivDangerClass();
+            textfromHowdytoMooCow();         
+        }
+
+        function everyOtherSection() { 
+            var newtext = "";
+            var text = $('.moo').text();
+
+            }   
+        function textfromHowdytoMooCow() {  
+            var text = $('.moo').text(); 
+            var textLenght = text.length
+            var combineText = text + textLenght;
+            $('.moo').text(combineText); 
+            }
+
+        function functionToRun(){
+            $("section").css('color', 'red'); 
+        }
+
+        function addDivDangerClass(){
+            $('div').addClass("dangerTag"); 
+        }
+
+        
+        </script>
+    </head>
+    <body>
+        <div class="howdy">howdy</div>
+        <div class="moo cow">moo cow</div>
+        <div id="targetme">
+            <section>this is a section</section>
+        </div>
+        <div class="moo">mooo</div>
+        <div class="cow">cow</div>
+    </body>
+</html>

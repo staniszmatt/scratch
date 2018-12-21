@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="jquery.js" type="text/javascript"></script>
+	<style type="text/css">
+
+.dangerText{
+	color: red;
+}
+.moo.cow{ /*select an element with both a class of moo and cow */
+
+}
+.moo .cow{ /*select an element iwth a class of cow that is somewhere inside an element with a class of moo */
+	
+}
+/* select an element with a class of cow that is an immediate child of an element with a class of moo*/
+.moo > .cow{
+
+}
+/* select all emements with a class of moo, and also all elements with a class of cow*/
+.moo, .cow{
+
+}
+
+	</style>
+	<script type="text/javascript">
+
+$(document).ready( waitforAppFunction );
+
+function waitforAppFunction(){
+    //take the text from target1 and replace every a with an e
+    var changeLetterA = $('#target1').text();
+    changeLetterA = changeLetterA.replace(/a/g, 'e');
+    $('#target1').text(changeLetterA); 
+
+    //take the text from target2, triple, and add it back to target2
+    var stringToRepeat = $('#target2').text(); 
+    stringToRepeat = stringToRepeat.repeat(3);
+    $('#target2').text(stringToRepeat); 
+
+    //make the text from target3 upper case if the number of characters inside it is ODD, even make it lowercase
+    var stringTarget3 = $('#target3').text(); 
+    var stringLength = stringTarget3.length;
+        console.log("target3 string: ", stringTarget3, "length: ", stringLength); 
+     
+    if (stringLength%2 === 0){
+        stringTarget3 = stringTarget3.toUpperCase();
+    } else {
+        stringTarget3 = stringTarget3.toLowerCase();
+    }
+    $('#target3').text(stringTarget3);
+
+    //combine the text from target4, class hehe, and add ONLY 
+    //to the div with a class of moo that is inside the llama element
+    var textTarget4 = $('#target4').text(); 
+    var textClasshehe = $('.hehe').text();
+    var combineDivs = textTarget4 + " " + textClasshehe; 
+    $('div > .moo').text(combineDivs); 
+
+
+    //take the text from the div with a class of moo that is NOT inside 
+    //the div with a class of llama, cut it in half, and return it to the same element
+    var textFirstmooDiv = $('div.moo:nth-child(6)').text(); 
+    var lengthFirstMooDiv = textFirstmooDiv.length
+    lengthFirstMooDiv = parseInt(lengthFirstMooDiv/2); 
+    textFirstmooDiv = textFirstmooDiv.substr(0,lengthFirstMooDiv);  
+    $('div.moo:nth-child(6)').text(textFirstmooDiv); 
+
+    //select every element with a class of moo, get the length of the text inside it
+    //and add that number onto the text iside it
+
+    addStringLenghtToElement('div.moo:nth-child(6)'); 
+    addStringLenghtToElement('div > .moo');
+
+    function addStringLenghtToElement(elementID){  //Specifiy a single element only to get string lenght and add it to the text. 
+        var elementText = $(elementID).text(); 
+        var textLenght = elementText.length;
+        var returnString = elementText + " " + textLenght; 
+        $(elementID).text(returnString);
+    };
+};
+	</script>
+</head>
+<body class="llama">
+	<div id="target1">hahaha</div>
+	<div id="target2">this is the song that never ends, it goes on and on without end</div>
+	<div id="target3">make me upper case/LOWERCASE</div>
+	<div id="target4">get text from me</div>
+	<div class="hehe">and from me</div>
+	<div class="moo">don't add it to me</div>
+	<div class="llama">
+		<div class="moo">add it to me</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

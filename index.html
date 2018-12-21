@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scratch Pad</title>
+        <script type="text/javascript">
+            var myName = "Dan"; /* all code is in the window*/
+            //hoisting - raising declaration to top of current scope. 
+            //Only in delcartion does vairable get hoisted! 
+            console.log("Name: ", myName); 
+
+            var sentence = "And he said 'I love purple Curtains' to me"; 
+            var firstQuotePosition  = sentence.indexOf("'");
+            
+                console.log("first Quote string index value: ", firstQuotePosition);
+            var lastQuotePosition = sentence.lastIndexOf("'");  
+            var splitWOrkds = sentence.slice(firstQuotePosition + 1, lastQuotePosition); 
+            console.log("New words",splitWOrkds); 
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
