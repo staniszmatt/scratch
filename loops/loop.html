@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops!</title>
+        <script type="text/javascript">
+        
+            // for (initiator; check; incrementor){
+
+            // }
+
+            // initiator
+            // while(check){
+            //     work
+            //     incrementor
+            // } 
+            // 1) does it start?   ie: if I subsitute the initial value in the check, is it true?
+            // 2) does it ever end?  ie: if you progress the initial value to its next steps, will the check ever be false?
+
+
+//             initiator (once)
+// check
+// work
+// incrementor, go to check
+
+// initiator
+// while( check ){
+//   work
+//   incrementor
+// }
+
+// for( intiator ; check ; incrementor ){
+//   work
+// }
+// initiator
+// do{
+//   work
+// } while( check )
+
+// var possibleLetters = 'abcdefghijklmnopqrstuvwxyz1234567890';
+// var uniqueID = ''
+// var neededLength = 10;
+// while( uniqueID.length-neededLength ){
+//   var randomIndex = Math.floor(possibleLetters.length * Math.random())
+//   uniqueID += possibleLetters[ randomIndex ];
+// }
+
+//   
+//      
+
+// var sentence = "i am a silly person";
+// var characterToSwapForVowels = '*';
+// make a new string
+// var newString = "";
+// get a list of vowels aeiou
+// var vowelList = ["a", "e", "i", "o", "u" ];
+// go through the sentence, 1 letter at a time, from start to end
+//   get the current letter   " "
+// for (indexSentence = 0; indexSentence < sentence.length; indexSentence++){
+//     var spliceString = sentence.slice(indexSentence,indexSentence+1); 
+
+    // go through the list of vowels, 1 letter at a time, from start to end
+    // check if the current vowel is the same as the current letter
+    //f true: 
+    //           add a * to the new string
+    //           break out of vowel loop
+    //       if false: do nothing
+    //   repeat the vowel loop
+    //   if we counted past the last vowel
+    //     add the current letter to the new string
+    // repeat the sentence loop
+//     switch (spliceString) {
+//         case "a":
+//         case "e":
+//         case "i":
+//         case "o":
+//         case "u":
+//         newString += characterToSwapForVowels;
+//         break;
+//     default:
+//         newString += spliceString; 
+//         break;
+//     }
+//     console.log("New String is: ", newString); 
+// }
+var students = {
+  paschaldaniel : {
+    fname: 'Daniel',
+    lname: 'Paschal',
+    age: 40
+  },
+  smithjohn : {
+    fname: 'John',
+    lname: 'Smith',
+    age: 38
+  },
+  doejane : {
+    fname: 'Jane',
+    lname: 'Doe',
+    age: 41
+  }
+};
+
+var keyObject ={};
+var keyNames = [];
+var keyLastNams = [];
+var keyage = [];
+var nameKey = [];
+
+for (var key in students){
+    console.log("Names: ", key);
+    for (var someName in students[key]){
+        console.log("keys: ", someName);
+        console.log("string values: ",students[key][someName]);
+        // for (var strings in students[key].keys){
+        //     var stringValue = students[key][keys];
+        //     console.log("string values: ",stringValue);
+        // };
+    };
+};
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

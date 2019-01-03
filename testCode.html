@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing</title>
+        <script type="text/javascript">
+        
+        function findLongestWordLength(str) {
+            let strSplit = str.split(" ");
+            let longestWord = 0;
+            for(var i =0; i< strSplit.length; i++){
+                if(strSplit[i].length > longestWord){
+                    longestWord += strSplit[i].length;
+                    console.log("longest word Index: ", longestWord)
+                };
+            };
+            return longestWord;
+        };
+
+var displayLongestWordCount = findLongestWordLength("The quick brown fox jumped over the lazy dog");
+console.log("longest word length ", displayLongestWordCount);
+
+        
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
