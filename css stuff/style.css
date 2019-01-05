@@ -1,0 +1,54 @@
+
+.square{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 5px;
+    top: 0px;
+    position: relative;
+    transform-origin: 50% 100%;
+    animation-direction: forward;
+  }
+  
+  @keyframes hopFlip {
+    0% {
+      background-color: green;
+      transform: scale(1)
+    }
+    5%{
+      transform: scale(.7, .9);
+    }
+    20%{
+      transform: scale(.5, 1.2);
+      top: -10px;
+    }
+    25%{
+      top: -10px;
+      transform: scale(.7, 1.0);
+    }
+    50%{
+      top: 10px;
+      transform: scale(1.1, .7);
+      background-color: green;
+    }
+    75%{
+      top: 0px;
+      
+    }
+    100%{
+      transform: scale(1.0, 1.0);
+      background-color: red;
+    }
+  
+  
+  }
+  
+  .hopFlipAnimation{
+    animation: hopFlip 2s infinite;
+  }
+  
+  
+  
+  
+  

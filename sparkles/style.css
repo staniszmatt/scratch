@@ -1,0 +1,57 @@
+/* a sample target to generate sparkles on*/
+.calcBody{
+    height: 300px;
+    width: 300px;
+    background-color: black;
+  }
+  /*this is the sparkle base, it contains the two parts of the sparkle to animate*/
+  .sparkle{
+    height: 5px;
+    width: 5px;
+    /* absolute so they can be placed throughout the target*/
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    opacity: .4;
+  }
+  /* use the before and after pseudo elements
+  to cut down on the amount of elements we need to generate*/
+  .sparkle::before, .sparkle::after{
+    content: '';/*pseudo elements have to have content to work*/
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    /* center the sparkle parts so they are coming from the middle*/
+    
+  }
+  .sparkle::before{
+    /* use a keyframe animation to make the sparkle part get bigger and smaller*/
+    animation: growShrink 2s infinite;
+    animation-timing-function: linear;
+    transform: translate(-50%, -50%) rotateZ(-23deg) skewX(45deg);
+  }
+  .sparkle::after{
+    /* this has a different time so the sparkles parts offset their animation*/
+      animation: growShrink 1s infinite;
+    /* linear timing so it moves more quickly for the short time it exists*/
+    animation-timing-function: linear;
+    /* have to repeat the translate or it will be deactivated.  skew turns our square into more of a diamond*/
+    transform: translate(-50%, -50%) rotateZ(53deg) skewX(23deg);
+  }
+  /*animation to ge bigger and smaller*/
+  @keyframes growShrink{
+  
+    25%{
+      height: 80%;
+      width: 80%;
+    }
+    75%{
+      height: 120%;
+      width: 120%;
+    }
+  }  
