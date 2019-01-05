@@ -64,4 +64,9 @@ function startAddingSparkles( info ){
     return stopSparkleGeneration
   }
   //can pass in many things, but requires the calcBody
-  startAddingSparkles({ targetElement: '.calcBody'})  
+  startAddingSparkles({ targetElement: '.calcBody'})
+  
+  
+  
+  
+  
