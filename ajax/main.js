@@ -5,7 +5,7 @@ function loadWhenReady() {
 
     //AJAX 
     // $.ajax({  //$ is a function of an object and ajax() is the method
-    //     type: "method",
+    //     type/method: "method",
     //     url: "url", 
     //     data: "data",
     //     dataType: "dataType",
