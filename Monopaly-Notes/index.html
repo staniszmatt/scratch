@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" >
+    
+    //Note: Explaining what an arrow function does
+    this.properties = this.properties.filter(property => property !== square);
+    //Another way too look at it
+    this.properties = this.properties.filter(function(property){ return property !== square});
+    //The complete way to break it down.
+    var newProperties = [];
+    for( var i = 0; i< this.properties.length; i++){
+    var property = this.properties[i];
+    if( property !== square){
+        newProperties.push( property );
+    }
+    }
+    this.properties = newProperties;
+    
+// Set selected="selected" for the option you want to be the default.
+// <option selected="selected">3</option>
+
+//Setting up object data and accessing it
+    function doStuff( passedInOptions ){
+    const defaultOptions = {
+        name : 'john doe',
+        age: 30,
+        occupation: 'astronaut'
+    }
+    const activeOptions = {};
+    
+    for( let key in defaultOptions){
+        if( passedInOptions.hasOwnProperty(key)){
+        activeOptions[key] = passedInOptions[key];
+        } else {
+        activeOptions[key] = defaultOptions[key];
+        }
+    }
+    }
+
+    doStuff( {
+    name: 'dan paschal',
+    occupation: 'teacher'
+    })
+
+    //Timing functions with a recursive function call (like looping)
+    var actions = [
+        { todo: step1, wait: 3000 },
+        { todo: showDice, wait: 2000},
+        { todo: movePiece, wait: 1000}
+        ];
+    function startScript(){
+        console.log('starting script');
+        var scriptIndex = 0;
+        
+        function executeNextAction(){
+
+            var thisAction = actions[ scriptIndex++];
+            thisAction.todo();
+            if(scriptIndex=== actions.length){
+            return;
+            }
+            setTimeout( executeNextAction, thisAction.wait);
+        }
+    executeNextAction();
+    
+    }
+    startScript();
+    setTimeout(startScript, 1000);
+    
+    function step1(){
+        console.log('step 1');
+    }
+    function showDice(){
+        console.log('show dice')
+    }
+    function movePiece(){
+        console.log('move piece');
+}
+
+//Setup for bluring text within a given time frame.
+    setTimeout(blurStuff, 2000, '#target');
+
+    function blurStuff(target){
+        console.log(target);
+        target = $(target);
+        var intervalDuration = 100;
+        var totalTime = 1000;
+        var intervalCount = totalTime / intervalDuration;
+        
+        var startBlur = 0;
+        var endBlur = 10;
+        var deltaBlur = (endBlur - startBlur) / intervalCount;
+        var currentBlur = startBlur;
+        
+        function updateBlur(){
+            currentBlur+= deltaBlur;
+            target.css('filter', `blur(${currentBlur}px)`);
+            if(currentBlur< endBlur){
+            setTimeout( updateBlur, intervalDuration);
+            }
+        }
+        
+        updateBlur();
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
