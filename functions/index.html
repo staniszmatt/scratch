@@ -13,6 +13,24 @@
         //Function Execution, run, invocation, call
         name(argument); 
 
+        //closesures to encapulate date made before it ( before the function was called)
+        var names = ['dan', 'sky'];
+
+        (function() {
+        var theName = names[0];
+        $("#div1").click(function() {
+            sayName( theName );
+        });
+        })()
+
+        $("#div2").click(function() {
+        sayName('sky')
+        });
+
+        function sayName(incoming) {
+        alert(incoming)
+        }
+        names = ['christine', 'josh'];
 
         </script>
     </head>

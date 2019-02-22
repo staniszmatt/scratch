@@ -1,0 +1,185 @@
+var dummyData = {
+    "success": true, //EXAMPLE SETUP 
+    "data": [
+        "1000": {
+            "id": 1000,
+            "name": "Danika Quinteros",
+            "grade": 90,
+            "course": "La Paz de Resistance"
+        },
+        {
+            "id": 1030 "name": "Christine Than",
+            "grade": 100,
+            "course": "avacado selection 101"
+        }, //Other way example, need to keep id in object at least, outside may make it easer to search.
+        {
+            "id": 1000,
+            "name": "Christine Than",
+            "grade": 100,
+            "course": "avacado selection 101"
+        } //Better way usually 
+    ]
+}
+var bookListData = {
+    "success": true,
+    "listOfBooks": [{
+        "id": 3,
+        "bookInfo": {
+            "id": 3,
+            "title": "Stephen King",
+            "seller": "Some seller",
+            "publisher": "Publisher Name",
+            "bookCover": "https://kingbookimage",
+            "publishYear": 2019,
+            "msrp": 12.99, 
+            "rating": 2.9,
+            "images": [
+                "https://kingbookimage2",
+                "https://kingbookimage3",
+                "https://kingbookimage4"
+                ],
+            },
+        "sellerInfo":{
+            "sellerID":1,
+            "phoneNubmer": 1112223333,
+            "email": "someone@someplace.com",
+            "sellerRating": 5.0,
+            "sellingSince": "06/22/1982"
+            }, 
+        "publisher": "Publisher Name",
+        "publishYear": 2019,
+        "msrp": 12.99, 
+        "rating": 2.9,
+        "images": [
+            "https://kingbookimage1",
+            "https://kingbookimage2",
+            "https://kingbookimage3",
+            "https://kingbookimage4"
+            ],
+        "titleReivew":{
+            "reviewerID": 25,
+            "theReviewer": "Some Guy",
+            "dateReviewed": "2019-01-29",
+            "comment": "Something they said",
+            "reviewerRating": 3
+            }
+        },
+    {
+        "id": 1,
+        "bookInfo": {
+            "id": 3,
+            "title": "Other King",
+            "seller": "Some seller",
+            "publisher": "Publisher Name",
+            "bookCover": "https://somebookimage",
+            "publishYear": 2019,
+            "msrp": 12.99, 
+            "rating": 2.9,
+            "images": [
+                "https://somebookimage2",
+                "https://somebookimage3",
+                "https://somebookimage4"
+                ]
+            },
+        "sellerInfo":{
+            "sellerID":3,
+            "phoneNubmer": 3334445555,
+            "email": "someone@someplace.com",
+            "sellerRating": 3.0,
+            "sellingSince": "2018-02-30"
+            }, 
+        "publisher": "Publisher Name",
+        "publishYear": 2018,
+        "msrp": 10.99, 
+        "rating": 1.3,
+        "images": [
+            "https://bookimage1",
+            "https://bookimage2",
+            "https://bookimage3",
+            "https://bookimage4"
+        ],
+        "bookReviews":[
+            {
+            "reviewerID": 25,
+            "theReviewer": "Some Guy",
+            "dateReviewed": "2019-01-29",
+            "comment": "Something they said",
+            "reviewerRating": 3
+            },
+            {
+                "reviewerID": 24,
+                "theReviewer": "Some Guy",
+                "dateReviewed": "2019-02-01",
+                "comment": "Something they said",
+                "reviewerRating": 4
+            }
+        ]
+    }]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// example setup test for specific data
+var bookTitleData = {
+    "success": true,
+    "bookInfo": {
+        "id": 3,
+        "title": "Stephen King",
+        "seller": "Some seller",
+        "publisher": "Publisher Name",
+        "bookCover": "https://kingbookimage",
+        "publishYear": 2019,
+        "msrp": 12.99, 
+        "rating": 2.9,
+        "images": [
+            "https://kingbookimage2",
+            "https://kingbookimage3",
+            "https://kingbookimage4"
+            ],
+    },
+    "sellerInfo":{
+        "sellerID":1,
+        "phoneNubmer": 1112223333,
+        "email": "someone@someplace.com",
+        "sellerRating": 5.0,
+        "sellingSince": "06/22/1982"
+    }, 
+    "publisher": "Publisher Name",
+    "publishYear": 2019,
+    "msrp": 12.99, 
+    "rating": 2.9,
+    "sellerImages": [
+        "https://kingbookimage1",
+        "https://kingbookimage2",
+        "https://kingbookimage3",
+        "https://kingbookimage4"
+    ],
+    "bookReivews":[
+        {
+        "reviewerID": 25,
+        "theReviewer": "Some Guy",
+        "dateReviewed": "2019-01-29",
+        "comment": "Something they said",
+        "reviewerRating": 3
+        },
+        {
+            "reviewerID": 24,
+            "theReviewer": "Some Guy",
+            "dateReviewed": "2019-02-01",
+            "comment": "Something they said",
+            "reviewerRating": 4
+        }
+    ]
+},
+

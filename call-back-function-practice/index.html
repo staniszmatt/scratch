@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <script type="text/javascript">
+  
+  function toCallBack(callback){
+    console.log("toCallBack");
+    console.log("time out set");
+    setTimeout( function(){   //This is the function to call back with finished
+      callback("Made it to call back now");   //the response back through parameter
+    }, 2000);
+    ;
+  }
+  
+  function toStart(someValue){
+    console.log("Function To Call Back")
+    console.log("the value passed ", someValue);
+  }
+
+  console.log("End of the line");
+  console.log("Start call back function ", toCallBack(toStart))
+  console.log("Can keep working from here");
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
