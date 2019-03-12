@@ -57,19 +57,47 @@ class LinkedList {
    }
       delete( location = this.tail.value){
          //if location is undefined, delete the end.  if location is null, delete head
-
-         let nodeToDelete = this.search(location);
-         console.log("Pre Node for Delete is ",nodeToDelete);
-         let preNode = this.search(nodeToDelete.pre);
-         console.log("Pre Node is ", preNode);
-
-         preNode.next = nodeToDelete.next;
-         this.tail = preNode.value;
-         console.log("Pre to Tail Node ", preNode);
-
+         //Start by storing the node to delete  
+         let deleteNode = this.search(location);
+         //if its not the tail do this
+         if (location !== this.tail.value){
+            //If its the head then do this
+            if(location === this.head.value){
+               //Store the next node to change to the head
+               //Then set the current head to the next node
+               //Then set next node pre to the pre of the head node to delete it from the list
+               let nextNode = this.search(deleteNode.next.value);
+               this.head = nextNode;
+               nextNode.pre = deleteNode.pre; 
+            } else {
+               let preNode = this.search(deleteNode.pre);
+               let postNode = this.search(deleteNode.next.value);
+               preNode.next = deleteNode.next;
+               postNode.pre = deleteNode.pre;   
+            }
+         } else {
+            let preNode = this.search(deleteNode.pre);
+            preNode.next = deleteNode.next;
+            this.tail = preNode.value;
+         }
       }
-      move( targetNode, targetLocation ){
-         //move the targetNode to be the next of the targetLocation
+      move( targetNode, locationNode = this.tail.value ){
+         
+         //Grab all affective nodes
+         let target = this.search(targetNode);
+         let location = this.search(locationNode);
+         let preTarget = this.search(target.pre);
+         let preLocation = this.search(location.pre);
+         //Temp storage of next value to pass moved node to the previous node
+         let tempTargetNext = target.pre;
+         
+         target.pre=location.pre; //Move 
+         target.next=preLocation.next;
+         location.pre=target.value;
+         preLocation.next= target;
+         preLocation.pre= tempTargetNext;
+         preTarget.next = preLocation;
+
       }
 }
 
@@ -80,4 +108,3 @@ list.add('c');
 list.add('d')
 list.add('e');
 console.log("List is: ", list);
-
