@@ -1,7 +1,7 @@
 body {
   margin: 0; 
 }
-.main-div {
+/* .main-div { TODO: used for my original code
   height: 100vh;
   width: 100%;
   background-color: cyan;
@@ -19,4 +19,19 @@ body {
   height: 75px;
   width:  75px;
 
+} */
+
+#draggable {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.dropzone {
+  width: 200px;
+  height: 20px;
+  background: blueviolet;
+  margin-bottom: 10px;
+  padding: 10px;
 }

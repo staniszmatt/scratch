@@ -19,13 +19,26 @@
         </script>
     </head>
     <body>
-        <div class="main-div">
+        <!-- <div class="main-div"> TODO: Original code I setup 
             <div id="click-move" class="move-me">
                 <div class="inner-div">
                     Move Me. 
                 </div>
             </div>
-        </div>
+        </div> -->
+
+        <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event -->
+
+        <div class="dropzone"> 
+            <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> 
+            This div is draggable 
+          </div> 
+        </div> 
+        <div class="dropzone"></div>
+        <div class="dropzone"></div> 
+        <div class="dropzone"></div>
+      
+
         <script src="main.js" text="javascript" ></script>
     </body>
 </html>
