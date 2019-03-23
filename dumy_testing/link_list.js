@@ -55,50 +55,54 @@ class LinkedList {
       //return false if reached tail and search value wasn't found
       return false;
    }
-      delete( location = this.tail.value){
-         //if location is undefined, delete the end.  if location is null, delete head
-         //Start by storing the node to delete  
-         let deleteNode = this.search(location);
-         //if its not the tail do this
-         if (location !== this.tail.value){
-            //If its the head then do this
-            if(location === this.head.value){
-               //Store the next node to change to the head
-               //Then set the current head to the next node
-               //Then set next node pre to the pre of the head node to delete it from the list
-               let nextNode = this.search(deleteNode.next.value);
-               this.head = nextNode;
-               nextNode.pre = deleteNode.pre; 
-            } else {
-               let preNode = this.search(deleteNode.pre);
-               let postNode = this.search(deleteNode.next.value);
-               preNode.next = deleteNode.next;
-               postNode.pre = deleteNode.pre;   
-            }
+   delete( location = this.tail.value){
+      //if location is undefined, delete the end.  if location is null, delete head
+      //Start by storing the node to delete  
+      let deleteNode = this.search(location);
+      //if its not the tail do this
+      if (location !== this.tail.value){
+         //If its the head then do this
+         if(location === this.head.value){
+            //Store the next node to change to the head
+            //Then set the current head to the next node
+            //Then set next node pre to the pre of the head node to delete it from the list
+            let nextNode = this.search(deleteNode.next.value);
+            this.head = nextNode;
+            nextNode.pre = deleteNode.pre; 
          } else {
             let preNode = this.search(deleteNode.pre);
+            let postNode = this.search(deleteNode.next.value);
             preNode.next = deleteNode.next;
-            this.tail = preNode.value;
+            postNode.pre = deleteNode.pre;   
          }
+      } else {
+         let preNode = this.search(deleteNode.pre);
+         preNode.next = deleteNode.next;
+         this.tail = preNode.value;
       }
-      move( targetNode, locationNode = this.tail.value ){
-         
-         //Grab all affective nodes
-         let target = this.search(targetNode);
-         let location = this.search(locationNode);
-         let preTarget = this.search(target.pre);
-         let preLocation = this.search(location.pre);
-         //Temp storage of next value to pass moved node to the previous node
-         let tempTargetNext = target.pre;
-         
-         target.pre=location.pre; //Move 
-         target.next=preLocation.next;
-         location.pre=target.value;
-         preLocation.next= target;
-         preLocation.pre= tempTargetNext;
-         preTarget.next = preLocation;
-
+   }
+   move( targetNode, locationNode = this.tail.value ){
+      
+      //Store as reff variable 
+      let savedNode=this.search(targetNode);
+      this.delete(targetNode)
+      //Added saved node to right side
+      let locNode=this.search(locationNode);
+      //Set target node reff
+      savedNode.pre=locNode.value;
+      savedNode.next = locNode.next;
+      //Set the location node next reff
+      locNode.next =savedNode;
+      //if its the tail, reset the tail
+      if (savedNode.next===null){
+         this.tail = savedNode;
+         //if not set the next node reff
+      }else {
+         let nextLocNode = this.search(locNode.next);
+         savedNode.next = nextLocNode;
+         nextLocNode.pre=savedNode.value;
       }
+   }
 }
 
 let list = new LinkedList;
