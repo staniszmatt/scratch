@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            
+            .calcbody {
+                background-color: lightblue;
+                height: 80vh;
+            }
+
+            .display{
+                background-color: blue;
+                height: 15%;
+            }
+            .bottom {
+                height: 85%;
+            }
+
+            .leftcol {
+                background-color: red;
+                height: 100%
+            }
+
+            .rightcol {
+                background-color: pink;
+                height: 100%
+            }
+            
+            .clearcont{
+                height: 15%;
+                background-color: lime;
+            }
+            .numcont {
+                height: 85%;
+                background-color: violet;
+            }
+            
+        </style>
+    </head>
+    <body>
+<!--Boot Strap 3: Float
+    Boot Strap 4: Flex 
+    Box Model is the element box on right side in inspect
+    Boot Strap uses boarder box - fits into box 
+        Other class to boarder box is content-box shrinks to fit content
+    Do not try to fix all brake points! Will drive you to insanity 
+    -->
+    <div class="calcbody col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="display"></div>
+        <div class="bottom">
+            <div class="leftcol col-xs-8">
+                <div class="clearcont row">
+                    <button class="btn btn-lrg btn-sucess col-xs-4 col-xs-offset-1">CE</button>
+                    <button class="btn btn-lrg btn-sucess col-xs-4 col-xs-offset-1">C</button>
+                </div>
+                <div class="numcont"></div>
+            </div>
+            <div class="rightcol col-xs-4"></div>
+        </div>
+    </div>
+    
+    </body>
+</html>

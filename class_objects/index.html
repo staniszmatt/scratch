@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class Objects</title>
+        <script type="text/javascript">
+            // var numContainer = 0;  //syntactical sugar
+            // var stringToAdd= '';
+
+            // function add1ToNum(){
+            // numContainer++;
+            // };
+            // function addWordToString( word ){
+            // stringToAdd+= word;
+            // };
+
+            // function subtract1FromNum(){
+            // numContainer--;
+            // };
+
+            // class numObject{
+            //     constructor(){
+            //         this.numContainer = 0; 
+            //     };
+            //     add1ToNum(){
+            //         this.numContainer++;
+            //     };
+            //     subtract1FromNum(){
+            //         this.numContainer--;
+            //     };
+            // };
+
+            // class StringObj{
+            //     constructor(){
+            //         this.stringToAdd = ''; 
+            //         this.addWords = [];
+            //     };
+            //     addWordToString(word){
+            //         this.stringToAdd += word;
+            //         this.addWords.push(word);
+            //     };
+            // };
+
+            // var mattString = new StringObj(); //instantes the object 
+        
+            // dog obj that can bark eat and sleep 
+
+            class mattDog{
+                constructor(nameMe, nameBreed){
+                    this.newName = nameMe;
+                    this.whatBread = nameBreed;
+                }
+                eat(){
+                    console.log(this.newName+" is hungry!");
+                }
+                speak(){
+                    console.log() 
+                };
+            };
+
+            var myDog = new mattDog("Matthew","Pomeranian")
+            console.log(myDog);
+
+            class DogEats{
+                constructor(){
+                    this.eatFood = this.newDog.foodLevel; 
+                    this.happyIncrease = this.newDog.happiness;
+                }
+                feedingDog(){
+                    this.eatFood++;
+                    this.newDog.foodLevel = this.eatFood;
+                }
+                feedHappy(){
+                    this.happyIncrease
+                }
+            }
+        
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
