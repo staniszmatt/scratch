@@ -29,6 +29,10 @@ Sub ReNumber()
 
   'Collect information from user
   NewNumberInput = Application.InputBox(NumberPrompt, NumberTilte, DefaultNum)
+  If NewNumberInput = "False" Then 
+    Exit Sub
+  End If
+  On Error GoTo Canceled
   Set StartRng = Application.InputBox("Select Where To Start", "Obtain Range", Type:=8)
 
   'Checking for good input
@@ -80,6 +84,8 @@ Sub ReNumber()
     End If
     RowCounter = RowCounter + 1
   Loop
+
+  Canceled:
 End Sub
 
 Function ChangeNumbers(CurrentNumber, CellNumberInfo)
