@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+class LinkedList{
+	constructor(){
+		this.head = null;
+		this.tail = null;
+		this.current = null;
+	}
+	search( searchValue ){
+		this.current = this.head;
+		while(this.current.value !== searchValue && this.current.next!==null){
+			this.current = this.current.next;
+		}
+		if(this.current.value === searchValue){
+			return this.current;
+		}
+		return false;
+		
+
+	}
+	add( value, location = this.tail){
+		var newNode = {
+			value: value,
+			next: null
+		}
+		if(this.head === null){
+			this.current = this.head = this.tail = newNode;
+			return;
+		} else if(location===null){
+			var oldHead = this.head;
+			this.head = newNode;
+			newNode.next = oldHead;
+			return;
+		}
+		newNode.next = location.next;
+		location.next = newNode;
+		if(location===this.tail){
+			this.tail.next = newNode;
+			this.tail = newNode;
+		}
+	}
+	delete( location ){
+		//if location is undefined, delete the end.  if location is null, delete head
+	}
+	move( targetNode, targetLocation ){
+		//move the targetNode to be the next of the targetLocation
+	}
+}		
+var list = new LinkedList();
+list.add('a');
+list.add('b');
+list.add('c');
+var targetLocation = list.search('b');
+list.add('c', targetLocation);
+list.add('-a', null);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
