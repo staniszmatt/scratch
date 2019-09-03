@@ -54,14 +54,9 @@ Sub ReNumber()
   Do While CellValueCheck      
 
     CellLocationVal = SelectedCol & RowCounter
-      Debug.Print CellLocationVal & " Current Cell location"
     CheckNextCell = SelectedCol & RowCounter+1 
-      Debug.Print CheckNextCell & " Next Cell Location"
-
     CurrentCellValue = Range(CellLocationVal)
-      Debug.Print CurrentCellValue & " Current Cell Value"
     NextCellVal = Range(CheckNextCell)
-      Debug.Print NextCellVal & " Next cell Value"
     CellValueCheck = CellHasValue(CurrentCellValue)
 
     If IsNumeric(NextCellVal) Then 
